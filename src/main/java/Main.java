@@ -32,8 +32,8 @@ public class Main {
             autos[i] = auto;
         }
         System.out.println("Ввод успешно завершён!");
-        Gonka гонка = new Gonka(autos);
-        Automobile лидер = гонка.startAndGetLeader(24);
-        System.out.println("Самая быстрая машина: " + лидер.name);
+        Gonka gonka = new Gonka(autos);
+        Automobile leader = gonka.startAndGetLeader(24);
+        System.out.println("Самая быстрая машина: " + leader.name);
     }
 }
