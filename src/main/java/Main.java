@@ -18,6 +18,9 @@ public class Main {
             while (!((speed >= 0) && (speed <= 250))) {
                 System.out.println("Введите скорость автомобиля " + (i + 1));
                 speed = in.nextDouble();
+                if (!((speed >= 0) && (speed <= 250))) {
+                    System.out.println("Неправильная скорость!");
+                }
             }
             Automobile авто = new Automobile(name, speed);
             autos[i] = авто;
