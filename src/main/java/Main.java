@@ -17,13 +17,19 @@ public class Main {
             speed = -1.0;
             while (!((speed >= 0) && (speed <= 250))) {
                 System.out.println("Введите скорость автомобиля " + (i + 1));
-                speed = in.nextDouble();
+                String speedStr = in.nextLine();
+                try {
+                    speed = Double.parseDouble(speedStr);
+                } catch (Exception e) {
+                    System.out.println("Неправильная скорость!");
+                    continue;
+                }
                 if (!((speed >= 0) && (speed <= 250))) {
                     System.out.println("Неправильная скорость!");
                 }
             }
-            Automobile авто = new Automobile(name, speed);
-            autos[i] = авто;
+            Automobile auto = new Automobile(name, speed);
+            autos[i] = auto;
         }
         System.out.println("Ввод успешно завершён!");
         Gonka гонка = new Gonka(autos);
